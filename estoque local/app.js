@@ -97,7 +97,41 @@ function getStockStatus(product) {
     if (product.quantity === 0) return { label: 'Sem Estoque', className: 'badge-empty', level: 'empty' };
     if (product.quantity <= Math.floor(product.minStock * 0.3)) return { label: 'Crítico', className: 'badge-critical', level: 'critical' };
     if (product.quantity <= product.minStock) return { label: 'Baixo', className: 'badge-low', level: 'low' };
-    return { label: 'OK', className: 'badge-ok', level: 'ok' };
+    return { label: 'OK', className: 'badge-ok', level: 'ok' };function getExpiryStatus(product) {
+    if (!product.expiryDate) {
+        return null;
+    }
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const expiry = new Date(`${product.expiryDate}T00:00:00`);
+    const difference = expiry.getTime() - today.getTime();
+    const daysUntilExpiry = Math.ceil(difference / (1000 * 60 * 60 * 24));
+
+    if (daysUntilExpiry < 0) {
+        return {
+            label: 'Vencido',
+            level: 'expired',
+            days: daysUntilExpiry
+        };
+    }
+
+    if (daysUntilExpiry <= 30) {
+        return {
+            label: 'Vence em breve',
+            level: 'warning',
+            days: daysUntilExpiry
+        };
+    }
+
+    return {
+        label: 'Dentro da validade',
+        level: 'ok',
+        days: daysUntilExpiry
+    };
+}
+
 }
 
 function formatCurrency(value) {
