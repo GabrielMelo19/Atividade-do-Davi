@@ -601,10 +601,10 @@ function bindEvents() {
         const sku = document.getElementById('product-sku').value.trim();
         const expiryDate = document.getElementById('product-expiry-date').value;
         const description = document.getElementById('product-description').value.trim();
-        if (!name || !categoryId || !volume || purchasePrice < 0 || salePrice < 0 || minStock < 0) {
-            showToast('Preencha os campos obrigatórios corretamente.', 'error');
-            return;
-        }
+        if (!name || !categoryId || !volume || purchasePrice < 0 || salePrice < 0 || minStock < 0 || quantity < 0) {
+    showToast('Preencha os campos obrigatórios corretamente.', 'error');
+    return;
+}
         if (id) {
             const product = getProductById(id);
             if (product) {
