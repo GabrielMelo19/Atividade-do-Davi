@@ -683,9 +683,14 @@ function bindEvents() {
         movements.unshift(newMovement);
         if (type === 'entry') {
             product.quantity += quantity;
-        } else {
-            product.quantity = Math.max(0, product.quantity - quantity);
-        }
+       } else {
+    if (quantity > product.quantity) {
+        showToast(`Estoque insuficiente. Disponível: ${product.quantity} unidade(s).`, 'error');
+        return;
+    }
+
+    product.quantity -= quantity;
+}
         saveData(STORAGE_KEYS.movements, movements);
         saveData(STORAGE_KEYS.products, products);
         closeModal('movement-modal');
