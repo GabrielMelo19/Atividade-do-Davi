@@ -234,15 +234,60 @@ function renderDashboardMovements() {
 function renderDashboardAlerts() {
     const container = document.getElementById('dashboard-alerts');
     if (!container) return;
-    const lowProducts = products.filter((product) => product.quantity <= product.minStock);
-    if (lowProducts.length === 0) {
-        container.innerHTML = `<div class="alert-empty"><i class="fa-solid fa-circle-check"></i><span>Estoque adequado</span></div>`;
+
+    const lowProducts = products.filter(
+        (product) => product.quantity <= product.minStock
+    );
+
+    const expiryProducts = products.filter((product) => {
+        const status = getExpiryStatus(product);
+        return status && (status.level === 'expired' || status.level === 'warning');
+    });
+
+    const alerts = [];
+
+    lowProducts.slice(0, 5).forEach((product) => {
+        alerts.push(`
+            <div class="alert-item">
+                <span>📦 ${product.name}</span>
+                <strong>${product.quantity} em estoque</strong>
+            </div>
+        `);
+    });
+
+    expiryProducts.slice(0, 5).forEach((product) => {
+        const status = getExpiryStatus(product);
+
+        if (status.level === 'expired') {
+            alerts.push(`
+                <div class="alert-item">
+                    <span>🔴 ${product.name}</span>
+                    <strong>Produto vencido</strong>
+                </div>
+            `);
+        } else {
+            alerts.push(`
+                <div class="alert-item">
+                    <span>🟠 ${product.name}</span>
+                    <strong>Vence em ${status.days} dias</strong>
+                </div>
+            `);
+        }
+    });
+
+    if (alerts.length === 0) {
+        container.innerHTML = `
+            <div class="alert-empty">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Estoque e validade adequados</span>
+            </div>
+        `;
         return;
     }
-    container.innerHTML = lowProducts.slice(0, 5).map((product) => {
-        return `<div class="alert-item"><span>${product.name}</span><strong>${product.quantity} em estoque</strong></div>`;
-    }).join('');
+
+    container.innerHTML = alerts.slice(0, 5).join('');
 }
+
 
 function renderDashboardTopProducts() {
     const container = document.getElementById('top-products-list');
