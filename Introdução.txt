@@ -1,0 +1,5 @@
+Bom decimos fazer esse trabalho sobre estoque porque achamos bastante interessante mostrar como funciona a parte essencial de uma adega porque sem um controle de estoque a loja não teria um controle de quantos produtos ela teria para comercializar durante o mês então sem essa parte do estoque seria quase impossível manter a loja aberta logíco tem a parte do fornecedor que também é essencial para manter a loja funcionando pois sem produto não tem como ter um comercio aberto.
+
+Um sistema de controle de estoque, em uma adega pode contribuir para deixar o gerenciamento de seus produtos mais rapido e organizado e eficiente, pois por meio dele fica mais facio de regitrar produtos de qual fornecedor veio e quantos produtos entraram e quantos foram vendido.
+
+Nosso trabalho tem como objetivo desenvolver uma forma de deixar mais facil o gerencimento das mercadorias e auxiliar numa tomada de decisões mais rapida e mais acertiva para que o dono da adega não tome prejuizo com erro nos registro e no controle dos produtos comercializados 
