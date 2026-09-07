@@ -399,7 +399,7 @@ function renderReports() {
         const totalInventory = products.reduce((sum, product) => sum + product.quantity, 0);
         const totalCategories = categories.length;
         const movementCount = movements.length;
-        summary.innerHTML = `<div class="summary-card"><strong>${formatCurrency(stockValue())}</strong><span>Valor total</span></div><div class="summary-card"><strong>${totalInventory}</strong><span>Itens em estoque</span></div><div class="summary-card"><strong>${movementCount}</strong><span>Movimentações</span></div><div class="summary-card"><strong>${totalCategories}</strong><span>Categorias</span></div>`;
+        summary.innerHTML = `<div class="summary-card"><strong>${formatCurrency(stockValue())}</strong><span> Valor total</span></div><div class="summary-card"><strong>${totalInventory}</strong><span> Itens em estoque</span></div><div class="summary-card"><strong>${movementCount}</strong><span> Movimentações</span></div><div class="summary-card"><strong>${totalCategories}</strong><span> Categorias</span></div>`;
     }
 }
 
