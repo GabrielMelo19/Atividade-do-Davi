@@ -372,6 +372,18 @@ function renderReports() {
 function stockValue() {
     return products.reduce((sum, product) => sum + product.salePrice * product.quantity, 0);
 }
+function getMostValuableProduct() {
+    if (!products.length) return null;
+
+    return products.reduce((mostValuable, product) => {
+        const currentValue = product.salePrice * product.quantity;
+        const mostValuableValue = mostValuable.salePrice * mostValuable.quantity;
+
+        return currentValue > mostValuableValue ? product : mostValuable;
+    });
+}
+
+
 
 function showToast(message, type = 'info') {
     const container = document.getElementById('toast-container');
