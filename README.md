@@ -20,8 +20,9 @@ O sistema de controle de estoque da adega ira controlar produtos como:
 
 ## Controle de estoque
 
-O sistema permitira controlar:
+O sistema permite controlar:
+
 - Entrada de produtos
-- Saada de produtos
-- Quantidade disponavel
+- Saída de produtos
+- Quantidade disponível
 - Produtos vendidos
