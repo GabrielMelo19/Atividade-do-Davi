@@ -26,3 +26,8 @@ O sistema permite controlar:
 - Saída de produtos
 - Quantidade disponível
 - Produtos vendidos
+## Melhorias futuras
+
+- Adicionar novas funcionalidades ao sistema.
+- Melhorar a organização e a usabilidade da aplicação.
+- Implementar novos recursos conforme a necessidade do projeto.
