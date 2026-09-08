@@ -11,7 +11,11 @@ Objetivo do trabalho: Sistema de controle de estoque para uma adega.
 
 ## Produtos do estoque
 
+conflito-readme
+Um sistema de controli de estoqui da adega ira controlar produtos como:
+
 Um sistema de controle de estoque da adega ira controlar produtos como:
+main
 - Vinho
 - Whisky
 - Cerveja
