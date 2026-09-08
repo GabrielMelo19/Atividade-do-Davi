@@ -7,12 +7,15 @@ Daniel Poletti Ferreira
 Carlos Mendes
 Kayke Alves 
 
-Objetivo do trabalho:
-Nosso grupo decidiu desenvolver um projeto sobre um controle de estoque de uma adega entao nesse estoque vai mostrar a entrada e saida dos produtos que sao comercializados no local quantos tem ainda guardados no almoxarifado e quantos ja foram vendidos no dia e o valor de cada produto e o nome de cada bebida que tem para ser comercializada como vinho seco, vinho tinto suave, whisky 12 anos, etc
+Objetivo do trabalho: Sistema de controle de estoque para uma adega.
 
 ## Produtos do estoque
 
-O sistema de controle de estoque da adega ira controlar produtos como:
+conflito-readme
+Um sistema de controli de estoqui da adega ira controlar produtos como:
+
+Um sistema de controle de estoque da adega ira controlar produtos como:
+main
 - Vinho
 - Whisky
 - Cerveja
